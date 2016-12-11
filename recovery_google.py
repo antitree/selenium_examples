@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import csv, time
 
+EMAILADDR = 'recoveryemail@yourdomain.com'
 account_url = 'https://accounts.google.com'
 
 with open('accounts.csv', 'r') as f:
@@ -39,7 +40,7 @@ for account in accounts:
 
 	  e_recovery = driver.find_element_by_class_name("Kc")
 	  e_recovery.clear()
-	  e_recovery.send_keys("antitree@gmail.com")
+	  e_recovery.send_keys(EMAILADDR)
 
 	  e_done = driver.find_element_by_xpath('//a[@role = "button"]')
 	  e_done.submit()
